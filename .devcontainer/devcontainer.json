@@ -1,0 +1,28 @@
+{
+    "name": "My Codespace",
+    "image": "mcr.microsoft.com/vscode/devcontainers/python:3.8",
+    "postStartCommand": "python3 /workspaces/123/g.py",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.pythonPath": "/usr/local/bin/python"
+            },
+            "extensions": [
+                "ms-python.python"
+            ]
+        }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/sshd:1": {
+            "version": "latest",
+            "startSSH": true  // Automatically starts the SSH server
+        }
+    },
+    "portsAttributes": {
+        "2222": {
+            "label": "SSH Server",
+            "onAutoForward": "openPreview"
+        }
+    },
+    "remoteUser": "vscode"
+}
